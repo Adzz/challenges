@@ -4,12 +4,18 @@
 
 # $ mrspec spec/linked_list_functions/list_first_spec.rb
 def list_first(list)
-  # Try typing this into pry: show-source -e list.class
-  require 'pry'
-  binding.pry
+  begin
+    list.head.data
+  rescue
+    return nil
+  end
 end
 
 def list_shift(list)
+  return list.head unless list.head
+  data = list.head.data
+  list.head=(list.head.link)
+  data
 end
 
 def list_unshift(list, data)
