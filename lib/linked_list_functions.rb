@@ -19,9 +19,8 @@ def list_shift(list)
 end
 
 def list_unshift(list, data)
- # Try typing this into pry: show-source -e list.class
- require "pry"
- binding.pry
+  list.head=Node.new(data, list.head)
+  list
 end
 
 # Probably a nice intermediate set
